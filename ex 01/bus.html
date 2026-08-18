@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BUS Tickets</title>
+</head>
+
+<body background="home.jpg">
+
+    <h2 align="center">BUS Tickets</h2>
+<table border="1" align="center" cellpadding="5" width="70%">
+
+<tr>
+    <th width="20%">City</th>
+    <th width="15%">Price</th>
+    <th width="20%">Dropping Location</th>
+    <th width="25%">bus Name</th>
+    <th width="20%">Picture</th>
+</tr>
+
+<tr>
+    <td align="center">Chennai</td>
+    <td align="center">Rs.200</td>
+    <td align="center">Madurai</td>
+    <td align="center">KPN Travels</td>
+    <td align="center">
+        <img src="bus1.avif" width="70" height="80">
+    </td>
+</tr>
+
+<tr>
+    <td align="center">coimbatore</td>
+    <td align="center">Rs.250</td>
+    <td align="center">Virudhunagr</td>
+    <td align="center">Amurta travels</td>
+    <td align="center">
+        <img src="bus2.avif" width="70" height="80">
+    </td>
+</tr>
+
+</table>
+
+    <h3>Rules</h3>
+
+    <ul>
+        <li>Please carry your booking confirmation.</li>
+        <li>Tickets cannot be cancelled after booking.</li>
+    </ul>
+
+    <hr>
+
+    <h3>Bus Ticket Booking Form</h3>
+
+    <form>
+
+        <label>Name :</label>
+        <input type="text" name="name">
+        <br><br>
+        <select name="show">
+    <option>Select City</option>
+    <option>Coimbatore </option>
+    <option>Chennai</option>
+    
+</select>
+
+
+
+
+        <label>Number of Seats :</label>
+        <input type="number" name="seats">
+        <br><br>
+
+
+        <label>Sleeper :</label>
+        <input type="radio" name="Sleeper"> Yes
+        <input type="radio" name="Sleeper"> No
+        <br><br>
+
+
+        <label>Date :</label>
+        <input type="date" name="date">
+        <br><br>
+
+
+        <label>Payment Method :</label>
+        <input type="radio" name="payment"> GPay
+        <input type="radio" name="payment"> PhonePe
+        <br><br>
+
+
+        <input type="submit" value="Book Ticket">
+        <a href="home.html"> back to home </a>
+
+
+
+    </form>
+
+</body>
+
+</html>

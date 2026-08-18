@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movie Tickets</title>
+</head>
+
+<body background="home.jpg">
+
+    <h2 align="center">Movie Tickets</h2>
+<table border="1" align="center" cellpadding="4" width="90%">
+
+<tr>
+    <th width="20%">Movie</th>
+    <th width="15%">Price</th>
+    <th width="20%">Show Time</th>
+    <th width="25%">Theatre Name</th>
+    <th width="20%">Picture</th>
+</tr>
+
+<tr>
+    <td align="center">Doctor</td>
+    <td align="center">Rs.200</td>
+    <td align="center">10:00 AM</td>
+    <td align="center">AGS Cinemas</td>
+    <td align="center">
+        <img src="movie1.jpg" width="70" height="70">
+    </td>
+</tr>
+
+<tr>
+    <td align="center">Remo</td>
+    <td align="center">Rs.250</td>
+    <td align="center">6:30 PM</td>
+    <td align="center">INOX</td>
+    <td align="center">
+        <img src="movie3.jpg" width="70" height="80">
+    </td>
+</tr>
+
+</table>
+
+    <h3>Rules</h3>
+
+    <ul>
+        <li>Please carry your booking confirmation.</li>
+        <li>Tickets cannot be cancelled after booking.</li>
+    </ul>
+
+    <h3>Movie Ticket Booking Form</h3>
+
+    <form>
+
+        <label>Name :</label>
+        <input type="text" name="name">
+        <br><br>
+         Movie :
+<select name="movie">
+    <option>Select Movie</option>
+    <option>Doctor</option>
+    <option>Jailer</option>
+    <option>Remo</option>
+</select>
+
+<br><br>
+
+
+        <label>Number of Seats :</label>
+        <input type="number" name="seats">
+        <br><br>
+
+
+        <label>Snacks :</label>
+        <input type="radio" name="snacks"> Yes
+        <input type="radio" name="snacks"> No
+        <br><br>
+
+
+        <label>Date :</label>
+        <input type="date" name="date">
+        <br><br>
+
+
+        <label>Payment Method :</label>
+        <input type="radio" name="payment"> GPay
+        <input type="radio" name="payment"> PhonePe
+        <br><br>
+
+
+        <input type="submit" value="Book Ticket">
+        <a href="home.html"> back to home </a>
+        
+    </form>
+
+</body>
+
+</html>

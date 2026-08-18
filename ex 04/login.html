@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Career Connect - Login</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+}
+
+h1{
+    text-align:center;
+    color:white;
+    margin-top:30px;
+    text-shadow:2px 2px 5px black;
+}
+
+table{
+    width:500px;
+    margin:40px auto;
+    background:white;
+    border:3px solid #003366;
+    border-collapse:collapse;
+    box-shadow:0px 0px 15px black;
+}
+
+th{
+    background:#003366;
+    color:white;
+    padding:15px;
+    font-size:24px;
+}
+
+td{
+    border:1px solid gray;
+    padding:12px;
+    font-size:17px;
+}
+
+input[type=text],
+input[type=email],
+input[type=password]{
+
+    width:95%;
+    padding:8px;
+    border:1px solid gray;
+    border-radius:5px;
+    font-size:15px;
+
+}
+
+button{
+
+    background:#003366;
+    color:white;
+    padding:10px 25px;
+    border:none;
+    border-radius:20px;
+    font-size:16px;
+    cursor:pointer;
+    margin:5px;
+
+}
+
+button:hover{
+
+    background:green;
+
+}
+
+.error{
+
+    color:red;
+    font-size:13px;
+
+}
+
+#success{
+
+    color:green;
+    font-size:18px;
+    text-align:center;
+    font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Career Connect</h1>
+
+<form id="loginForm">
+
+<table>
+
+<tr>
+<th colspan="2">User Login</th>
+</tr>
+
+<tr>
+<td><b>Username</b></td>
+<td>
+<input type="text" id="username">
+<div class="error" id="usernameError"></div>
+</td>
+</tr>
+
+<tr>
+<td><b>Email</b></td>
+<td>
+<input type="email" id="email">
+<div class="error" id="emailError"></div>
+</td>
+</tr>
+
+<tr>
+<td><b>Password</b></td>
+<td>
+<input type="password" id="password">
+<div class="error" id="passwordError"></div>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+
+<button type="submit">Login</button>
+
+<button type="reset">Clear</button>
+
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+
+<div id="success"></div>
+
+</td>
+</tr>
+
+</table>
+
+</form>
+
+<script>
+
+document.getElementById("loginForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+document.getElementById("usernameError").innerHTML="";
+document.getElementById("emailError").innerHTML="";
+document.getElementById("passwordError").innerHTML="";
+document.getElementById("success").innerHTML="";
+
+var valid=true;
+
+var username=document.getElementById("username").value.trim();
+var email=document.getElementById("email").value.trim();
+var password=document.getElementById("password").value;
+
+var emailPattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+if(username==""){
+
+document.getElementById("usernameError").innerHTML="Enter your username";
+valid=false;
+
+}
+
+if(email==""){
+
+document.getElementById("emailError").innerHTML="Enter your email";
+valid=false;
+
+}
+else if(!emailPattern.test(email)){
+
+document.getElementById("emailError").innerHTML="Invalid email";
+valid=false;
+
+}
+
+if(password==""){
+
+document.getElementById("passwordError").innerHTML="Enter your password";
+valid=false;
+
+}
+else if(password.length<6){
+
+document.getElementById("passwordError").innerHTML="Password must be at least 6 characters";
+valid=false;
+
+}
+
+if(valid){
+
+document.getElementById("success").innerHTML="Login Successful!";
+
+document.getElementById("loginForm").reset();
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

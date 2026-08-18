@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Dress Shopping System</title>
+</head>
+
+<body>
+
+<center>
+    <h1>ONLINE DRESS SHOPPING SYSTEM</h1>
+    <hr>
+</center>
+
+<h2>Welcome</h2>
+<p>
+This website allows customers to view dresses, watch product videos,
+select dress categories, and purchase dresses using an online form.
+</p>
+
+<hr>
+
+<h2>Dress Categories (Image Map)</h2>
+
+<img src="dresscategories.jpg" alt="Dress Categories" usemap="#dressmap" width="500" height="300">
+
+<map name="dressmap">
+    <area shape="rect" coords="0,0,170,300" href="#casual" alt="Casual Dress">
+    <area shape="rect" coords="171,0,340,300" href="#party" alt="Party Wear">
+    <area shape="rect" coords="341,0,500,300" href="#traditional" alt="Traditional Dress">
+</map>
+
+<hr>
+
+<h2 id="casual">Casual Dress</h2>
+
+<img src="casual.jpg"
+width="250"
+height="300"
+draggable="true"
+alt="Casual Dress">
+
+<p>Price: ₹999</p>
+
+<hr>
+
+<h2 id="party">Party Wear Dress</h2>
+
+<img src="party.jpg"
+width="250"
+height="300"
+draggable="true"
+alt="Party Dress">
+
+<p>Price: ₹1999</p>
+
+<hr>
+
+<h2 id="traditional">Traditional Dress</h2>
+
+<img src="traditional.jpg"
+width="250"
+height="300"
+draggable="true"
+alt="Traditional Dress">
+
+<p>Price: ₹2499</p>
+
+<hr>
+
+<h2>Product Video</h2>
+
+<video width="400" height="250" controls>
+    <source src="dressvideo.mp4" type="video/mp4">
+</video>
+
+<hr>
+
+<h2>Drag and Drop Cart</h2>
+
+<p>Drag any dress image into the shopping cart.</p>
+
+<div
+ondrop="drop(event)"
+ondragover="allowDrop(event)"
+style="width:300px;height:150px;border:2px solid black;">
+Shopping Cart
+</div>
+
+<hr>
+
+<h2>Store Location</h2>
+
+<p>
+Click below to view our store location.
+</p>
+
+<a href="https://maps.google.com" target="_blank">
+View Store Location
+</a>
+
+<hr>
+
+<h2>Purchase Form</h2>
+
+<form>
+
+<label>Customer Name</label><br>
+<input type="text" required><br><br>
+
+<label>Email</label><br>
+<input type="email" required><br><br>
+
+<label>Mobile Number</label><br>
+<input type="tel"><br><br>
+
+<label>Select Dress</label><br>
+<select>
+<option>Casual Dress</option>
+<option>Party Wear</option>
+<option>Traditional Dress</option>
+</select>
+
+<br><br>
+
+<label>Quantity</label><br>
+<input type="number" min="1" max="10"><br><br>
+
+<label>Select Size</label><br>
+
+<input type="radio" name="size">S
+<input type="radio" name="size">M
+<input type="radio" name="size">L
+<input type="radio" name="size">XL
+
+<br><br>
+
+<label>Select Color</label><br>
+<input type="color">
+
+<br><br>
+
+<label>Delivery Date</label><br>
+<input type="date">
+
+<br><br>
+
+<label>Delivery Time</label><br>
+<input type="time">
+
+<br><br>
+
+<label>Address</label><br>
+<textarea rows="4" cols="30"></textarea>
+
+<br><br>
+
+<label>Payment Method</label><br>
+
+<input type="checkbox">Cash on Delivery<br>
+<input type="checkbox">UPI<br>
+<input type="checkbox">Card Payment
+
+<br><br>
+
+<label>Rate Our Website</label><br>
+
+<input type="range" min="1" max="10">
+
+<br><br>
+
+<input type="submit" value="Place Order">
+
+<input type="reset" value="Clear">
+
+</form>
+
+<hr>
+
+<footer>
+
+<p>
+&copy; 2026 Online Dress Shopping System
+</p>
+
+</footer>
+
+</body>
+</html>

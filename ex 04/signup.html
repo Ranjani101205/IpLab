@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Career Connect - Registration</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+}
+
+h1{
+text-align:center;
+color:white;
+margin-top:20px;
+text-shadow:2px 2px 5px black;
+}
+
+table{
+width:700px;
+margin:30px auto;
+background:white;
+border:3px solid #003366;
+border-collapse:collapse;
+box-shadow:0px 0px 15px black;
+}
+
+th{
+background:#003366;
+color:white;
+padding:15px;
+font-size:24px;
+}
+
+td{
+border:1px solid gray;
+padding:12px;
+font-size:16px;
+}
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=file],
+select{
+width:95%;
+padding:8px;
+border:1px solid gray;
+border-radius:5px;
+font-size:15px;
+}
+
+.gender{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.gender label{
+display:flex;
+align-items:center;
+gap:5px;
+}
+
+button{
+background:#003366;
+color:white;
+padding:10px 25px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+font-size:16px;
+margin:5px;
+}
+
+button:hover{
+background:green;
+}
+
+.error{
+color:red;
+font-size:13px;
+}
+
+#success{
+color:green;
+font-size:18px;
+font-weight:bold;
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Career Connect</h1>
+
+<form id="regForm">
+
+<table>
+
+<tr>
+<th colspan="2">Job Seeker Registration</th>
+</tr>
+
+<tr>
+<td><b>Full Name</b></td>
+<td>
+<input type="text" id="name" placeholder="Enter your full name">
+<div class="error" id="nameError"></div>
+</td>
+</tr>
+
+<tr>
+<td><b>Email</b></td>
+<td>
+<input type="text" id="email" placeholder="Enter your email">
+<div class="error" id="emailError"></div>
+</td>
+</tr>
+
+<tr>
+<td><b>Phone Number</b></td>
+<td>
+<input type="text" id="phone" placeholder="10 digit phone number">
+<div class="error" id="phoneError"></div>
+</td>
+</tr>
+
+<tr>
+<td><b>Password</b></td>
+<td>
+<input type="password" id="password" placeholder="At least 6 characters">
+<div class="error" id="passwordError"></div>
+</td>
+</tr>
+
+<tr>
+<td><b>Gender</b></td>
+<td>
+<div class="gender">
+<label><input type="radio" name="gender"> Male</label>
+<label><input type="radio" name="gender"> Female</label>
+<label><input type="radio" name="gender"> Other</label>
+</div>
+</td>
+</tr>
+
+<tr>
+<td><b>Date of Birth</b></td>
+<td>
+<input type="date" id="dob">
+</td>
+</tr>
+
+<tr>
+<td><b>Qualification</b></td>
+<td>
+<select id="qualification">
+<option>B.E/B.Tech</option>
+<option>B.Sc</option>
+<option>MCA</option>
+<option>Other</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td><b>Desired Job Title</b></td>
+<td>
+<input type="text" id="job" placeholder="Web Developer">
+<div class="error" id="jobError"></div>
+</td>
+</tr>
+
+<tr>
+<td><b>Years of Experience</b></td>
+<td>
+<input type="number" id="experience">
+<div class="error" id="experienceError"></div>
+</td>
+</tr>
+
+<tr>
+<td><b>LinkedIn Link</b></td>
+<td>
+<input type="text" id="linkedin" placeholder="https://www.linkedin.com/in/yourname">
+<div class="error" id="linkedinError"></div>
+</td>
+</tr>
+
+<tr>
+<td><b>Upload Resume</b></td>
+<td>
+<input type="file" id="resume">
+<div class="error" id="resumeError"></div>
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+<label>
+<input type="checkbox" id="terms">
+I agree to the Terms & Conditions
+</label>
+<div class="error" id="termsError"></div>
+</td>
+</tr>
+
+<tr>
+<td colspan="2" align="center">
+<button type="submit">Register</button>
+<button type="reset">Reset</button>
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+<div id="success"></div>
+</td>
+</tr>
+
+</table>
+
+</form>
+<script>
+
+document.getElementById("regForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let valid=true;
+
+document.querySelectorAll(".error").forEach(function(x){
+x.innerHTML="";
+});
+
+document.getElementById("success").innerHTML="";
+
+const name=document.getElementById("name");
+const email=document.getElementById("email");
+const phone=document.getElementById("phone");
+const password=document.getElementById("password");
+const job=document.getElementById("job");
+const experience=document.getElementById("experience");
+const linkedin=document.getElementById("linkedin");
+const resume=document.getElementById("resume");
+
+const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phonePattern=/^[0-9]{10}$/;
+const linkedinPattern=/^https:\/\/(www\.)?linkedin\.com\/.*$/i;
+
+if(name.value.trim()==""){
+document.getElementById("nameError").innerHTML="Enter your full name";
+valid=false;
+}
+
+if(email.value.trim()==""){
+document.getElementById("emailError").innerHTML="Enter your email";
+valid=false;
+}
+else if(!emailPattern.test(email.value.trim())){
+document.getElementById("emailError").innerHTML="Enter valid email";
+valid=false;
+}
+
+if(phone.value.trim()==""){
+document.getElementById("phoneError").innerHTML="Enter phone number";
+valid=false;
+}
+else if(!phonePattern.test(phone.value.trim())){
+document.getElementById("phoneError").innerHTML="Enter valid 10 digit phone number";
+valid=false;
+}
+
+if(password.value==""){
+document.getElementById("passwordError").innerHTML="Enter password";
+valid=false;
+}
+else if(password.value.length<6){
+document.getElementById("passwordError").innerHTML="Password must contain at least 6 characters";
+valid=false;
+}
+
+if(job.value.trim()==""){
+document.getElementById("jobError").innerHTML="Enter desired job";
+valid=false;
+}
+
+if(experience.value==""){
+document.getElementById("experienceError").innerHTML="Enter experience";
+valid=false;
+}
+else if(experience.value<0){
+document.getElementById("experienceError").innerHTML="Experience cannot be negative";
+valid=false;
+}
+
+if(linkedin.value.trim()==""){
+document.getElementById("linkedinError").innerHTML="Enter LinkedIn profile link";
+valid=false;
+}
+else if(!linkedinPattern.test(linkedin.value.trim())){
+document.getElementById("linkedinError").innerHTML="Enter valid LinkedIn URL";
+valid=false;
+}
+
+if(resume.value==""){
+document.getElementById("resumeError").innerHTML="Upload your resume";
+valid=false;
+}
+else{
+const filePattern=/(\.pdf|\.doc|\.docx)$/i;
+
+if(!filePattern.test(resume.value)){
+document.getElementById("resumeError").innerHTML="Only PDF/DOC/DOCX files allowed";
+valid=false;
+}
+}
+
+if(valid){
+document.getElementById("success").innerHTML="Registration Successful!";
+document.getElementById("regForm").reset();
+}
+
+});
+
+</script>
+</body>
+</html>

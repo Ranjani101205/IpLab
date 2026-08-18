@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Event Tickets</title>
+</head>
+
+<body background="home.jpg">
+
+    <h2 align="center">Event Tickets</h2>
+<table border="1" align="center" cellpadding="5" width="70%">
+
+<tr>
+    <th width="20%">Event</th>
+    <th width="15%">Price</th>
+    <th width="20%">Time</th>
+    <th width="25%">Place</th>
+    <th width="20%">Poster</th>
+</tr>
+
+<tr>
+    <td align="center">Music Show</td>
+    <td align="center">Rs.200</td>
+    <td align="center">5:00 PM</td>
+    <td align="center">EVP</td>
+    <td align="center">
+        <img src="event1.webp" width="70" height="80">
+    </td>
+</tr>
+
+<tr>
+    <td align="center">Dance Show</td>
+    <td align="center">Rs.250</td>
+    <td align="center">2:00 PM</td>
+    <td align="center">EVP</td>
+    <td align="center">
+        <img src="event2.jpg" width="70" height="80">
+    </td>
+</tr>
+
+</table>
+
+    <h3>Rules</h3>
+
+    <ul>
+        <li>Please carry your booking confirmation.</li>
+        <li>Tickets cannot be cancelled after booking.</li>
+    </ul>
+
+    <hr>
+
+    <h3>Event Ticket Booking Form</h3>
+
+    <form>
+
+        <label>Name :</label>
+        <input type="text" name="name">
+        <br><br>
+        <select name="show">
+    <option>Select Show</option>
+    <option>Music Show</option>
+    <option>Dance show</option>
+    
+</select>
+
+
+
+        <label>Number of Seats :</label>
+        <input type="number" name="seats">
+        <br><br>
+
+
+        <label>Snacks :</label>
+        <input type="radio" name="Sleeper"> Yes
+        <input type="radio" name="Sleeper"> No
+        <br><br>
+
+
+        <label>Date :</label>
+        <input type="date" name="date">
+        <br><br>
+
+
+        <label>Payment Method :</label>
+        <input type="radio" name="payment"> GPay
+        <input type="radio" name="payment"> PhonePe
+        <br><br>
+
+
+        <input type="submit" value="Book Ticket">
+        <a href="home.html"> back to home </a>
+
+    </form>
+
+</body>
+
+</html>
