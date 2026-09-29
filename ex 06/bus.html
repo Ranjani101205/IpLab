@@ -1,0 +1,462 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>BUS Tickets</title>
+
+    <style>
+
+        /* 1. Body */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("home.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 30px;
+        }
+
+        /* 2. Main heading */
+        h2 {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 20px;
+            border-radius: 12px;
+            width: 350px;
+            margin: 10px auto 30px;
+            text-align: center;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        /* 3. Bus table */
+        .bus-table {
+            background-color: white;
+            border-collapse: collapse;
+            border: 3px solid #1565c0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px black;
+        }
+
+        /* 4. Table heading */
+        .bus-table th {
+            background-color: #1565c0;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        /* 5. Table data */
+        .bus-table td {
+            background-color: #f5f9ff;
+            padding: 12px;
+            border: 1px solid #90caf9;
+        }
+
+        /* 6. Table row hover */
+        .bus-table tr:hover td {
+            background-color: #e3f2fd;
+        }
+
+        /* 7. Bus images */
+        .bus-table img {
+            border-radius: 8px;
+            border: 3px solid #1565c0;
+            object-fit: cover;
+            box-shadow: 0 2px 5px gray;
+        }
+
+        /* 8. Rules box */
+        .rules {
+            width: 70%;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-left: 6px solid #f44336;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px gray;
+        }
+
+        .rules h3 {
+            color: #d32f2f;
+            margin-top: 0;
+        }
+
+        .rules li {
+            margin: 10px;
+            color: #333;
+        }
+
+        /* 9. Form box */
+        .booking-box {
+            width: 500px;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 255, 0.97);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px black;
+        }
+
+        /* 10. Form heading */
+        .booking-box h3 {
+            text-align: center;
+            color: #1565c0;
+            font-size: 22px;
+            border-bottom: 2px solid #1565c0;
+            padding-bottom: 10px;
+        }
+
+        /* 11. Labels */
+        label {
+            display: inline-block;
+            width: 150px;
+            margin: 10px 0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* 12. Text and number inputs */
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 220px;
+            padding: 10px;
+            border: 1px solid #999;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        /* 13. Input focus */
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            outline: none;
+            border: 2px solid #1565c0;
+            background-color: #e3f2fd;
+        }
+
+        /* 14. Submit button */
+        input[type="submit"] {
+            background-color: #1565c0;
+            color: white;
+            border: none;
+            padding: 13px 30px;
+            border-radius: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        /* 15. Submit hover */
+        input[type="submit"]:hover {
+            background-color: #0d47a1;
+            transform: scale(1.05);
+        }
+
+        /* 16. Back button */
+        .back-home {
+            display: inline-block;
+            margin-left: 20px;
+            background-color: #757575;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* 17. Back hover */
+        .back-home:hover {
+            background-color: #424242;
+        }
+
+        hr {
+            border: 0;
+            height: 3px;
+            background-color: #1565c0;
+            width: 80%;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <h2>
+        🚌 BUS TICKETS
+    </h2>
+
+
+    <!-- BUS DETAILS -->
+
+    <table
+        class="bus-table"
+        align="center"
+        cellpadding="5"
+        width="70%"
+    >
+
+        <tr>
+
+            <th width="20%">City</th>
+
+            <th width="15%">Price</th>
+
+            <th width="20%">Dropping Location</th>
+
+            <th width="25%">Bus Name</th>
+
+            <th width="20%">Picture</th>
+
+        </tr>
+
+
+        <tr>
+
+            <td align="center">
+                Chennai
+            </td>
+
+            <td align="center">
+                Rs.200
+            </td>
+
+            <td align="center">
+                Madurai
+            </td>
+
+            <td align="center">
+                KPN Travels
+            </td>
+
+            <td align="center">
+
+                <img
+                    src="bus1.avif"
+                    width="70"
+                    height="80"
+                    alt="KPN Bus"
+                >
+
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td align="center">
+                Coimbatore
+            </td>
+
+            <td align="center">
+                Rs.250
+            </td>
+
+            <td align="center">
+                Virudhunagar
+            </td>
+
+            <td align="center">
+                Amurta Travels
+            </td>
+
+            <td align="center">
+
+                <img
+                    src="bus2.avif"
+                    width="70"
+                    height="80"
+                    alt="Amurta Bus"
+                >
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <!-- RULES -->
+
+    <div class="rules">
+
+        <h3>
+            📋 Booking Rules
+        </h3>
+
+        <ul>
+
+            <li>
+                Please carry your booking confirmation.
+            </li>
+
+            <li>
+                Tickets cannot be cancelled after booking.
+            </li>
+
+            <li>
+                Please reach the boarding point at least 15 minutes early.
+            </li>
+
+            <li>
+                Carry a valid ID proof while travelling.
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <hr>
+
+
+    <!-- BOOKING FORM -->
+
+    <div class="booking-box">
+
+        <h3>
+            🚌 Bus Ticket Booking Form
+        </h3>
+
+
+        <!-- Servlet connection added here -->
+
+        <form action="BusServlet" method="post">
+
+
+            <label>Name:</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <br>
+
+
+            <label>Select City:</label>
+
+            <select name="city" required>
+
+                <option value="">
+                    Select City
+                </option>
+
+                <option>
+                    Coimbatore
+                </option>
+
+                <option>
+                    Chennai
+                </option>
+
+            </select>
+
+            <br>
+
+
+            <label>Number of Seats:</label>
+
+            <input
+                type="number"
+                name="seats"
+                min="1"
+                max="10"
+                placeholder="Seats"
+                required
+            >
+
+            <br>
+
+
+            <label>Sleeper:</label>
+
+            <input
+                type="radio"
+                name="sleeper"
+                value="Yes"
+                required
+            >
+            Yes
+
+            <input
+                type="radio"
+                name="sleeper"
+                value="No"
+            >
+            No
+
+            <br>
+
+
+            <label>Date:</label>
+
+            <input
+                type="date"
+                name="date"
+                required
+            >
+
+            <br>
+
+
+            <label>Payment Method:</label>
+
+            <input
+                type="radio"
+                name="payment"
+                value="GPay"
+                required
+            >
+            GPay
+
+            <input
+                type="radio"
+                name="payment"
+                value="PhonePe"
+            >
+            PhonePe
+
+            <br><br>
+
+
+            <div align="center">
+
+                <input
+                    type="submit"
+                    value="Book Ticket"
+                    style="background-color:#1565c0;"
+                >
+
+                <a
+                    href="home.html"
+                    class="back-home"
+                    style="font-size:15px;"
+                >
+                    Back to Home
+                </a>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>
+```

@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Reservation System</title>
+
+    <style>
+
+        /* 1. Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("home.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 2. Main heading */
+        h1 {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 25px;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        /* 3. About heading */
+        h2 {
+            color: white;
+            background-color: #1565c0;
+            padding: 12px;
+            width: 300px;
+            margin: 25px auto;
+            border-radius: 10px;
+        }
+
+        /* 4. About paragraph */
+        .about {
+            width: 75%;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            line-height: 1.7;
+            font-size: 17px;
+            box-shadow: 0 4px 12px black;
+        }
+
+        /* 5. Category table */
+        .category-table {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-collapse: separate;
+            border-spacing: 8px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px black;
+        }
+
+        /* 6. Table headings */
+        .category-table th {
+            background-color: #1565c0;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+
+        /* 7. Table cells */
+        .category-table td {
+            background-color: #e3f2fd;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        /* 8. Images */
+        .category-table img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 4px solid white;
+            box-shadow: 0 3px 8px gray;
+            transition: 0.3s;
+        }
+
+        /* 9. Image hover */
+        .category-table img:hover {
+            transform: scale(1.08);
+        }
+
+        /* 10. Links */
+        .click-link {
+            display: inline-block;
+            background-color: #1976d2;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* 11. Link hover */
+        .click-link:hover {
+            background-color: #0d47a1;
+            transform: scale(1.05);
+        }
+
+        /* 12. Horizontal line */
+        hr {
+            border: 0;
+            height: 3px;
+            background-color: #1565c0;
+            width: 85%;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <br><br>
+
+    <h1 align="center">
+        Welcome to Reservation System
+    </h1>
+
+    <hr>
+
+    <h2 align="center">
+        About Us
+    </h2>
+
+    <p class="about" align="center">
+        Welcome to the Reservation System. Our website provides an easy and
+        convenient way to reserve tickets for Movies, Buses, Trains, and
+        Events in one place. Users can view the available options, choose
+        their preferred category, and complete their booking quickly.
+        Our aim is to make ticket booking simple, fast, and user-friendly
+        for everyone.
+    </p>
+
+    <br>
+
+    <table
+        class="category-table"
+        border="1"
+        align="center"
+        cellpadding="15"
+        style="border: 3px solid #1565c0;"
+    >
+
+        <tr>
+
+            <th>Movies</th>
+            <th>Bus</th>
+            <th>Train</th>
+            <th>Events</th>
+
+        </tr>
+
+        <tr>
+
+            <td align="center">
+
+                <img src="movie.webp"
+                     alt="Movies"
+                     style="background-color:#fff;">
+
+                <br><br>
+
+                <a href="movie.html"
+                   class="click-link"
+                   style="font-size:16px;">
+                    &#8594; Click Here
+                </a>
+
+            </td>
+
+
+            <td align="center">
+
+                <img src="bus.jpg"
+                     alt="Bus"
+                     style="background-color:#fff;">
+
+                <br><br>
+
+                <a href="bus.html"
+                   class="click-link"
+                   style="font-size:16px;">
+                    &#8594; Click Here
+                </a>
+
+            </td>
+
+
+            <td align="center">
+
+                <img src="train.jpg"
+                     alt="Train"
+                     style="background-color:#fff;">
+
+                <br><br>
+
+                <a href="train.html"
+                   class="click-link"
+                   style="font-size:16px;">
+                    &#8594; Click Here
+                </a>
+
+            </td>
+
+
+            <td align="center">
+
+                <img src="event.avif"
+                     alt="Events"
+                     style="background-color:#fff;">
+
+                <br><br>
+
+                <a href="event.html"
+                   class="click-link"
+                   style="font-size:16px;">
+                    &#8594; Click Here
+                </a>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <br><br>
+
+</body>
+
+</html>
+```

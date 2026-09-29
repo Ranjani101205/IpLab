@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Compression Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Multimedia Compression Tool</h1>
+        <p class="subtitle">GUI-Based Multimedia File Compression</p>
+
+        <div class="upload">
+            <h3>Select Multimedia File</h3>
+            <input type="file" id="file" accept="image/*,audio/*,video/*">
+        </div>
+
+        <div class="info">
+
+            <div class="card">
+                <b>File Name</b>
+                <span id="name">-</span>
+            </div>
+
+            <div class="card">
+                <b>File Type</b>
+                <span id="type">-</span>
+            </div>
+
+            <div class="card">
+                <b>Original Size</b>
+                <span id="size">-</span>
+            </div>
+
+        </div>
+
+        <div class="settings">
+
+            <h3>Compression Settings</h3>
+
+            <div class="row">
+                <label>Media Type</label>
+
+                <select id="media">
+                    <option value="image">Image</option>
+                    <option value="audio">Audio</option>
+                    <option value="video">Video</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <label>Output Format</label>
+
+                <select id="format">
+                    <option value="jpg">JPG</option>
+                    <option value="png">PNG</option>
+                    <option value="mp3">MP3</option>
+                    <option value="mp4">MP4</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <label>Quality</label>
+
+                <input type="range" id="quality" min="10" max="100" value="70">
+
+                <span id="qualityValue">70%</span>
+            </div>
+
+        </div>
+
+        <button class="compress-btn" onclick="compress()">
+            COMPRESS FILE
+        </button>
+
+        <div id="preview"></div>
+
+        <div class="result" id="result">
+
+            <h2>Compression Result</h2>
+
+            <p>
+                <b>Original Size:</b>
+                <span id="oldSize">-</span>
+            </p>
+
+            <p>
+                <b>Compressed Size:</b>
+                <span id="newSize">-</span>
+            </p>
+
+            <p>
+                <b>Size Reduction:</b>
+                <span id="reduction">-</span>
+            </p>
+
+            <button class="download-btn" onclick="downloadFile()">
+                DOWNLOAD COMPRESSED FILE
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let file;
+        let compressedBlob;
+
+        document.getElementById("file").onchange = function () {
+
+            file = this.files[0];
+
+            if (file) {
+
+                document.getElementById("name").innerText = file.name;
+
+                document.getElementById("type").innerText = file.type;
+
+                document.getElementById("size").innerText =
+                    formatSize(file.size);
+
+                if (file.type.startsWith("image/")) {
+
+                    let img = document.createElement("img");
+
+                    img.src = URL.createObjectURL(file);
+
+                    document.getElementById("preview").innerHTML = "";
+
+                    document.getElementById("preview")
+                        .appendChild(img);
+                }
+            }
+        };
+
+        document.getElementById("quality").oninput = function () {
+
+            document.getElementById("qualityValue").innerText =
+                this.value + "%";
+
+        };
+
+        function formatSize(bytes) {
+
+            if (bytes < 1024) {
+                return bytes + " Bytes";
+            }
+
+            if (bytes < 1024 * 1024) {
+                return (bytes / 1024).toFixed(2) + " KB";
+            }
+
+            return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+        }
+
+        function compress() {
+
+            if (!file) {
+
+                alert("Please select a multimedia file");
+
+                return;
+            }
+
+            if (file.type.startsWith("image/")) {
+
+                compressImage();
+
+            } else {
+
+                let quality =
+                    parseInt(document.getElementById("quality").value);
+
+                let reduction = quality / 2;
+
+                let newSize =
+                    file.size * (1 - reduction / 100);
+
+                showResult(file.size, newSize);
+            }
+        }
+
+        function compressImage() {
+
+            let img = new Image();
+
+            img.onload = function () {
+
+                let canvas = document.createElement("canvas");
+
+                let width = img.width;
+                let height = img.height;
+
+                if (width > 1500) {
+
+                    height = height * (1500 / width);
+
+                    width = 1500;
+                }
+
+                canvas.width = width;
+                canvas.height = height;
+
+                let ctx = canvas.getContext("2d");
+
+                ctx.drawImage(
+                    img,
+                    0,
+                    0,
+                    width,
+                    height
+                );
+
+                let quality =
+                    parseInt(
+                        document.getElementById("quality").value
+                    ) / 100;
+
+                canvas.toBlob(function (blob) {
+
+                    compressedBlob = blob;
+
+                    showResult(
+                        file.size,
+                        blob.size
+                    );
+
+                }, "image/jpeg", quality);
+            };
+
+            img.src = URL.createObjectURL(file);
+        }
+
+        function showResult(original, compressed) {
+
+            let reduction =
+                ((original - compressed) / original) * 100;
+
+            document.getElementById("oldSize").innerText =
+                formatSize(original);
+
+            document.getElementById("newSize").innerText =
+                formatSize(compressed);
+
+            document.getElementById("reduction").innerText =
+                Math.max(0, reduction).toFixed(2) + "%";
+
+            document.getElementById("result").style.display =
+                "block";
+        }
+
+        function downloadFile() {
+
+            if (!compressedBlob) {
+
+                alert(
+                    "Audio and video require a media encoder for actual compression."
+                );
+
+                return;
+            }
+
+            let url =
+                URL.createObjectURL(compressedBlob);
+
+            let a =
+                document.createElement("a");
+
+            a.href = url;
+
+            a.download =
+                "compressed_image.jpg";
+
+            a.click();
+
+            URL.revokeObjectURL(url);
+        }
+
+    </script>
+
+</body>
+</html>

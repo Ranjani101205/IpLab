@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    min-height: 100vh;
+    padding: 40px;
+}
+
+.container {
+    width: 700px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    color: #243b55;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.upload {
+    border: 2px dashed #3f51b5;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    background: #f7f8ff;
+    margin-bottom: 25px;
+}
+
+.upload h3 {
+    color: #3f51b5;
+    margin-bottom: 15px;
+}
+
+.upload input {
+    padding: 10px;
+}
+
+.info {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.card {
+    flex: 1;
+    background: #f1f3f6;
+    padding: 18px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card b {
+    display: block;
+    color: #243b55;
+    margin-bottom: 8px;
+}
+
+.card span {
+    color: #555;
+    word-break: break-word;
+}
+
+.settings {
+    background: #f5f6fa;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.settings h3 {
+    color: #243b55;
+    margin-bottom: 15px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.row label {
+    width: 150px;
+    font-weight: bold;
+    color: #333;
+}
+
+.row select {
+    flex: 1;
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    background: white;
+}
+
+.row input[type="range"] {
+    flex: 1;
+}
+
+.row span {
+    width: 50px;
+    text-align: right;
+    font-weight: bold;
+    color: #3f51b5;
+}
+
+.compress-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.compress-btn:hover {
+    background: #303f9f;
+}
+
+#preview {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#preview img {
+    max-width: 250px;
+    max-height: 200px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+
+.result {
+    display: none;
+    background: #e8f5e9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.result h2 {
+    color: #267326;
+    margin-bottom: 15px;
+}
+
+.result p {
+    margin: 8px 0;
+    color: #333;
+}
+
+.download-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background: #267326;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: #1b5e20;
+}
